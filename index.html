@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>ふわふわ子猫AR</title>
+
+<script src="https://aframe.io/releases/1.5.0/aframe.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/AR-js-org/AR.js/aframe/build/aframe-ar.js"></script>
+
+<style>
+body {
+    margin: 0;
+    overflow: hidden;
+}
+</style>
+</head>
+
+<body>
+
+<a-scene embedded arjs>
+
+    <a-marker preset="hiro">
+
+        <!-- 子猫全体 -->
+        <a-entity position="0 0 0"
+                  animation="property: position; to: 0 0.12 0; dir: alternate; dur: 1500; loop: true">
+
+            <!-- 顔 -->
+            <a-sphere
+                position="0 1.2 0"
+                radius="0.55"
+                color="#FFF1E8"
+                scale="1 0.85 0.8">
+            </a-sphere>
+
+            <!-- 左耳 -->
+            <a-cone
+                position="-0.35 1.7 0"
+                radius-bottom="0.2"
+                radius-top="0"
+                height="0.5"
+                color="#FFF1E8"
+                rotation="0 0 12">
+            </a-cone>
+
+            <!-- 右耳 -->
+            <a-cone
+                position="0.35 1.7 0"
+                radius-bottom="0.2"
+                radius-top="0"
+                height="0.5"
+                color="#FFF1E8"
+                rotation="0 0 -12">
+            </a-cone>
+
+            <!-- 左耳の内側 -->
+            <a-cone
+                position="-0.35 1.68 0.08"
+                radius-bottom="0.11"
+                radius-top="0"
+                height="0.3"
+                color="#FFB6C9">
+            </a-cone>
+
+            <!-- 右耳の内側 -->
+            <a-cone
+                position="0.35 1.68 0.08"
+                radius-bottom="0.11"
+                radius-top="0"
+                height="0.3"
+                color="#FFB6C9">
+            </a-cone>
+
+            <!-- 左目 -->
+            <a-sphere
+                position="-0.2 1.28 0.43"
+                radius="0.07"
+                color="#55443D">
+            </a-sphere>
+
+            <!-- 右目 -->
+            <a-sphere
+                position="0.2 1.28 0.43"
+                radius="0.07"
+                color="#55443D">
+            </a-sphere>
+
+            <!-- 鼻 -->
+            <a-sphere
+                position="0 1.12 0.48"
+                radius="0.06"
+                color="#FF8FA8">
+            </a-sphere>
+
+            <!-- ほっぺ -->
+            <a-sphere
+                position="-0.32 1.12 0.38"
+                radius="0.09"
+                color="#FFB6C9"
+                opacity="0.8">
+            </a-sphere>
+
+            <a-sphere
+                position="0.32 1.12 0.38"
+                radius="0.09"
+                color="#FFB6C9"
+                opacity="0.8">
+            </a-sphere>
+
+            <!-- 体 -->
+            <a-sphere
+                position="0 0.55 0"
+                radius="0.4"
+                color="#FFF1E8"
+                scale="1 1.1 0.85">
+            </a-sphere>
+
+            <!-- 左手 -->
+            <a-sphere
+                position="-0.35 0.65 0.15"
+                radius="0.13"
+                color="#FFF1E8">
+            </a-sphere>
+
+            <!-- 右手 -->
+            <a-sphere
+                position="0.35 0.65 0.15"
+                radius="0.13"
+                color="#FFF1E8">
+            </a-sphere>
+
+            <!-- 左足 -->
+            <a-sphere
+                position="-0.2 0.2 0.15"
+                radius="0.16"
+                color="#FFF1E8">
+            </a-sphere>
+
+            <!-- 右足 -->
+            <a-sphere
+                position="0.2 0.2 0.15"
+                radius="0.16"
+                color="#FFF1E8">
+            </a-sphere>
+
+            <!-- しっぽ -->
+            <a-cylinder
+                position="0.43 0.55 -0.25"
+                radius="0.07"
+                height="0.65"
+                color="#FFF1E8"
+                rotation="0 0 -55"
+                animation="property: rotation; from: 0 0 -45; to: 0 0 45; dur: 900; dir: alternate; loop: true">
+            </a-cylinder>
+
+        </a-entity>
+
+        <!-- 魔法のリング -->
+        <a-torus
+            position="0 0.05 0"
+            rotation="-90 0 0"
+            radius="0.75"
+            radius-tubular="0.025"
+            color="#FFB6D9"
+            animation="property: rotation; to: -90 360 0; dur: 5000; loop: true">
+        </a-torus>
+
+        <!-- 浮かぶ星 -->
+        <a-entity
+            position="-0.7 1.9 0"
+            geometry="primitive: octahedron; radius: 0.12"
+            material="color: #FFE17B; emissive: #FFE17B"
+            animation="property: position; to: -0.7 2.1 0; dir: alternate; dur: 1000; loop: true">
+        </a-entity>
+
+        <a-entity
+            position="0.7 1.8 0"
+            geometry="primitive: octahedron; radius: 0.1"
+            material="color: #FFD1E8; emissive: #FFD1E8"
+            animation="property: position; to: 0.7 2.0 0; dir: alternate; dur: 1300; loop: true">
+        </a-entity>
+
+    </a-marker>
+
+    <a-entity camera></a-entity>
+
+</a-scene>
+
+</body>
+</html>
